@@ -1,0 +1,92 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ExercicioTriangulo",
+            "request": "launch",
+            "mainClass": "Exercicios.ExercicioTriangulo",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
+            "name": "PrimeiroWhile",
+            "request": "launch",
+            "mainClass": "AlgoritimosDeRepeticao.PrimeiroWhile",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
+            "name": "PrimeiroWhile",
+            "request": "launch",
+            "mainClass": "AlgoritimosDeRepeticao.PrimeiroWhile",
+            "projectName": "ProjetosJava_965be548"
+        },
+        {
+            "type": "java",
+            "name": "PrimeiroArray",
+            "request": "launch",
+            "mainClass": "AlgoritimosDeRepeticao.PrimeiroArray",
+            "projectName": "ProjetosJava_965be548"
+        },
+        {
+            "type": "java",
+            "name": "PrimeiroFor",
+            "request": "launch",
+            "mainClass": "AlgoritimosDeRepeticao.PrimeiroFor",
+            "projectName": "ProjetosJava_965be548"
+        },
+        {
+            "type": "java",
+            "name": "CalularIMC",
+            "request": "launch",
+            "mainClass": "CalularIMC",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
+            "name": "Jean",
+            "request": "launch",
+            "mainClass": "Jean",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
+            "name": "Teste2",
+            "request": "launch",
+            "mainClass": "Teste2",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
+            "name": "Teste",
+            "request": "launch",
+            "mainClass": "Teste",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
+            "name": "GeradorDeNumeros",
+            "request": "launch",
+            "mainClass": "GeradorDeNumeros",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "encoding": "UTF-8",
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "ProjetosJava_b4b521dc"
+        }
+    ]
+}
