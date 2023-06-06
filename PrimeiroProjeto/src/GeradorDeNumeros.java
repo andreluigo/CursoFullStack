@@ -1,61 +1,47 @@
 import java.util.Random;
+import java.util.Set;
+
 import javax.swing.JOptionPane;
+
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class GeradorDeNumeros {
     public static void main (String[] args) {
         Random random = new Random();
 
         String numerosPorCartela = JOptionPane.showInputDialog(null, "Números Por Cartela: " , "Gerador de Números", JOptionPane.QUESTION_MESSAGE);
-        int n = Integer.parseInt(numerosPorCartela);
+        int n1 = Integer.parseInt(numerosPorCartela);
 
         String qt = JOptionPane.showInputDialog(null, "Quantidade de Cartelas: " , "Gerador de Números", JOptionPane.QUESTION_MESSAGE);
         int n2 = Integer.parseInt(qt);
 
-        String result = ""; // Variável para armazenar os números gerados e ordenados
+        String result = "";
 
         for (int vez = 0; vez < n2; vez++) {
-            int gerados[] = new int[n];
-            for (int i = 0; i < n; i++) {
-                gerados[i] = random.nextInt(60)+1;
-            }
+            
+            Set<Integer> numeros = new HashSet<>();
+
+            int gerados[] = new int[n1];
+            
+            for (int i = 0; i < n1; i++){
+                int n;
+                do {
+                    n = random.nextInt(60)+1;                    
+                } while (numeros.contains(n));
+                
+                gerados[i] = n;
+                numeros.add(n);
+                
+            }          
+            
             Arrays.sort(gerados);
+            
+            result += "Cartela " + (vez+1) + ": " + Arrays.toString(gerados) + "\n";
+            
+        }     
 
-            result += "Cartela " + (vez+1) + ": " + getString(gerados) + "\n"; // Adiciona os números gerados e ordenados à variável result
-        } 
-
-        JOptionPane.showMessageDialog(null, result.toString(), "Gerador de Números", JOptionPane.INFORMATION_MESSAGE); // Exibe os números gerados e ordenados na tela
+        JOptionPane.showMessageDialog(null, result.toString(), "Gerador de Números", JOptionPane.INFORMATION_MESSAGE);
     }
-
-    public static String getString(int[] array) {
-        
-        String result = "";
-        
-        for (int j = 0; j < array.length; j++) {
-            if (j < array.length -1) {
-                result += array[j] + ", ";
-        } else {
-            result += array[j];
-        }        
-    } 
-    return result.toString();
-
-    /*public static String getString(int[] array) {
-        String result = "";
-
-        for (int j = 0; j < array.length; j++){
-            if (j < array.length -1){
-                result += array[j] + ", ";
-            } else {
-                result += array[j];
-            }
-        }
-
-        return result;*/
-    
-    
-    }
-
-
 
 }

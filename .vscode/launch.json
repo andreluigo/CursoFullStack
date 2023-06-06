@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PrimeiroArray",
+            "request": "launch",
+            "mainClass": "AlgoritimosDeRepeticao.PrimeiroArray",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
+            "name": "Estoque",
+            "request": "launch",
+            "mainClass": "Estoque.Sevice.Estoque",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
             "name": "ExercicioTriangulo",
             "request": "launch",
             "mainClass": "Exercicios.ExercicioTriangulo",
