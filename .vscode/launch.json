@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Estoque",
+            "request": "launch",
+            "mainClass": "Estoque.Service.Estoque",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
             "name": "PrimeiroArray",
             "request": "launch",
             "mainClass": "AlgoritimosDeRepeticao.PrimeiroArray",
