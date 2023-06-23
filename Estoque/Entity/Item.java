@@ -4,15 +4,15 @@ public class Item {
     
     private int id;
     private String nome;
-    public int qtde;
+    private int qtde;
     public float valor;
 
     //Construtor Padrão
-    public Item(int id, String nome, float valor) {
+    public Item(int id, String nome, int qtde, float valor) {
         this.id = id;
         this.nome = nome;
-        this.valor = valor;
-        qtde = 0;        
+        this.qtde = qtde;        
+        this.valor = valor;        
     }
 
     //Métodos Getter para ler os dados que são privados.
@@ -26,6 +26,19 @@ public class Item {
     
     public void setId(){
         this.id = this.id++;
+    }
+
+    public void setQtde (int qtde){
+        this.qtde = this.qtde + qtde;
+    }
+
+    public void removerQtde (int qtde){
+        if (qtde <= this.qtde){
+            this.qtde = this.qtde - qtde;
+        } else{
+            System.out.println("No estoque existe(m) apenas " + this.qtde + " unidade(s) do item e foram retiradas.\n");
+            this.qtde = 0;
+        }
     }
 
     //Método para calcular valor total dos itens
