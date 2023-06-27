@@ -16,7 +16,6 @@ public class Item {
     }
 
     //Métodos Getter para ler os dados que são privados.
-    //Neste caso não é necessário criar os métodos setters pq assumimos que os valores não podem ser alterados.
     public int getId (){
         return id;
     }
@@ -32,6 +31,7 @@ public class Item {
         this.qtde = this.qtde + qtde;
     }
 
+    //Retirar Itens do Estoque (Vendas)
     public void removerQtde (int qtde){
         if (qtde <= this.qtde){
             this.qtde = this.qtde - qtde;
@@ -50,9 +50,6 @@ public class Item {
     @Override
     public String toString() {
         return String.format(
-            "===================================\nCodigo: %d\nItem: %s\nQuantidade: %d\nValor Unitário: %.2f\nValor Total: %.2f\n===================================", id, nome, qtde, valor, valorTotal());
+            "======================================\nCodigo: %d\nItem: %s\nQuantidade: %d\nValor Unitário: %.2f\nValor Total: %.2f\n======================================", id, nome, qtde, valor, valorTotal());
     }
-
-
-
 }

@@ -15,11 +15,11 @@ public class EstoqueService {
 
     public void mostarEstoque(){
         System.out.println("\nRELACAO DE ITENS NO ESTOQUE");
-        System.out.println("===================================");
+        System.out.println("======================================");
         for (Item item : estoque) {
             System.out.println(item);
         }
-        System.out.println("===================================\n");
+        System.out.println("======================================\n");
     }
 
     //Método para Inserir Itens ao estoque
@@ -40,22 +40,35 @@ public class EstoqueService {
         Scanner nome = new Scanner(System.in);*/
     }
 
-    public void atualizarEstoque (int id, int qtde){
+    public boolean atualizarEstoque (int id, int qtde){
         //Scanner sc = new Scanner(System.in);
         //System.out.println("\nDigite a quantidade a ser adicionada no estoque: ");
         //int id = sc.nextInt();
         Item item = getById(id);
-        item.setQtde(qtde);
+        if (item != null){
+            item.setQtde(qtde);
+            return true;
+        } else{
+            System.out.println("\nItem não existe no estoque!\nTente novamente inserindo um código válido!");
+            return false;
+        }
 
         //sc.close();
     }
 
-    public void retiradaEstoque(int id, int qtde){
+    public boolean retiradaEstoque(int id, int qtde){
         //Scanner sc = new Scanner(System.in);
         //System.out.println("Qual o código do item você gostaria de atualizar?");
         //int id = sc.nextInt();
         Item item = getById(id);
-        item.removerQtde(qtde);
+        if (item != null){
+            item.removerQtde(qtde);
+            return true;
+        } else{
+            System.out.println("\nItem não existe no estoque!\nTente novamente inserindo um código válido!");
+            return false;
+        }
+        
 
         //sc.close();
     }
@@ -74,9 +87,12 @@ public class EstoqueService {
     public void buscarItem(int id){
         Item item = getById(id);
         if (item == null){
-            System.out.println("Item não está cadastrado no estoque!\n");
+            System.out.println("\nItem não está cadastrado no estoque!");
         } else{
-            System.out.println("O item pesquisado é:\n\n" + item + "\n\n");
+            System.out.println("\nO item pesquisado é:\n");
+            System.out.println("======================================");
+            System.out.println(item);
+            System.out.println("======================================");
         }
     }
 
