@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "manipulandoArquivos",
+            "request": "launch",
+            "mainClass": "ManipulandoArquivos.manipulandoArquivos",
+            "projectName": "ProjetosJava_b4b521dc"
+        },
+        {
+            "type": "java",
             "name": "Estoque",
             "request": "launch",
             "mainClass": "Estoque.Service.Estoque",

@@ -20,7 +20,7 @@ public class GeradorDeNumeros {
 
         for (int vez = 0; vez < n2; vez++) {
             
-            Set<Integer> numeros = new HashSet<>();
+           Set<Integer> numeros = new HashSet<>();
 
             int gerados[] = new int[n1];
             

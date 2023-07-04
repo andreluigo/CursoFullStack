@@ -13,6 +13,7 @@ public class EstoqueService {
     //Instanciação de listas
     private List<Item> estoque = new ArrayList<>(); //private pq só vai ser acessível por esta classe..
 
+    //Exibir os Itens Cadastrados no Estoque
     public void mostarEstoque(){
         System.out.println("\nRELACAO DE ITENS NO ESTOQUE");
         System.out.println("======================================");
@@ -22,7 +23,7 @@ public class EstoqueService {
         System.out.println("======================================\n");
     }
 
-    //Método para Inserir Itens ao estoque
+    //Método para Inserir Itens ao Estoque
     public void addItem(int id, String nome, int qtde, float valor){
         if (idOuNomeExiste(id, nome)){
             System.out.printf("\nCodigo %d ou Item %s já cadastrados!\n\n", id, nome);
@@ -30,20 +31,11 @@ public class EstoqueService {
             Item item = new Item(id, nome, qtde, valor);
             estoque.add(item);
             System.out.println("\nItem cadastrado com sucesso!\n");
-        }     
-              
-        
-        /*System.out.println("=========================================================");
-        System.out.println("Digite o nome do Item a ser cadastrado:");
-        Scanner nome = new Scanner(System.in);
-        System.out.println("Digite a quantidade de Itens a serem cadastrados:");
-        Scanner nome = new Scanner(System.in);*/
+        }        
     }
 
-    public boolean atualizarEstoque (int id, int qtde){
-        //Scanner sc = new Scanner(System.in);
-        //System.out.println("\nDigite a quantidade a ser adicionada no estoque: ");
-        //int id = sc.nextInt();
+    //Atualiza Quantidade de um Determinado Item no Estoque
+    public boolean atualizarEstoque (int id, int qtde){        
         Item item = getById(id);
         if (item != null){
             item.setQtde(qtde);
@@ -52,14 +44,10 @@ public class EstoqueService {
             System.out.println("\nItem não existe no estoque!\nTente novamente inserindo um código válido!");
             return false;
         }
-
-        //sc.close();
     }
 
+    //Retirar Itens do Estoque (vendas)
     public boolean retiradaEstoque(int id, int qtde){
-        //Scanner sc = new Scanner(System.in);
-        //System.out.println("Qual o código do item você gostaria de atualizar?");
-        //int id = sc.nextInt();
         Item item = getById(id);
         if (item != null){
             item.removerQtde(qtde);
@@ -67,13 +55,10 @@ public class EstoqueService {
         } else{
             System.out.println("\nItem não existe no estoque!\nTente novamente inserindo um código válido!");
             return false;
-        }
-        
-
-        //sc.close();
+        }        
     }
 
-    //Remover Item do Estoque
+    //Excluir Item do Estoque
     public void removerItem(int id){
         Item item = getById(id);
         if (item == null){
@@ -84,6 +69,7 @@ public class EstoqueService {
         }
     }
 
+    //Buscar Item no Estoque
     public void buscarItem(int id){
         Item item = getById(id);
         if (item == null){
@@ -96,17 +82,13 @@ public class EstoqueService {
         }
     }
 
-
-
-
-    //Buscar e Remover Item do Estoque
+    //Buscar e Retornar Item do Estoque
     public Item getById(int id){
         for (Item item : estoque) {
             if (id == item.getId()){
                 return item;
             } 
         }
-        //System.out.println("Item não existe no estoque!");
         return null;
     }
 
@@ -118,9 +100,6 @@ public class EstoqueService {
             }            
         }
         return false;
-    }
-
-
-    
+    }    
 }
  

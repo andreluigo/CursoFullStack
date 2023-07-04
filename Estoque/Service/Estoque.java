@@ -2,13 +2,10 @@ package Estoque.Service;
 
 import java.util.Scanner;
 
-//import Estoque.Entity.Item;
-
 public class Estoque {
     
     
     public static void main(String[] args) {
-        //Item item = new Item(15, "Item de Teste", 8.45f);
         Scanner sc = new Scanner(System.in);
         Scanner name = new Scanner(System.in);
         EstoqueService estoqueService = new EstoqueService();
@@ -46,7 +43,6 @@ public class Estoque {
                 float valor = sc.nextFloat();
                 estoqueService.addItem(id, nome, qtde, valor);
                 estoqueService.mostarEstoque();
-                //name.close();
             }else if (opt == 4){
                 System.out.println("\nDigite o código do item a ser excluído:");
                 int id = sc.nextInt();
